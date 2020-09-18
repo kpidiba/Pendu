@@ -37,15 +37,16 @@ int main(int argc,char *argv[]){
 		 printf("erreur");
 		 exit(0);
 	 }
+     printf("la longueur est %d",len);
 	 //initialisation de affiche avec *
-	 for(j=0;j<len;j++){
+	 for(j=0;j<len-1;j++){
 		 *(affiche+j)='*';
 	 }
 	 //boucle principal
 	 for(i=0;i<10;i++){
 		 //boucle qui affiche les mots trouves ou non
 		 printf(" mot secret : ");
-		 for (j=0;j<len;j++){
+		 for (j=0;j<len-1;j++){
 		   printf("%c",*(affiche+j));
 	     }
 
@@ -78,7 +79,7 @@ int main(int argc,char *argv[]){
 	       }
 	   }
 	   //verification du resultat
-	   if(nmot==len){
+	   if(nmot==len-1){
 	    printf("\n");
 	    printf("======Felicitaion====================\n");
 		printf("le mot est: %s",mot);

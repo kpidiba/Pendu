@@ -28,19 +28,20 @@ void motachercher(char *mot){
 		exit(0);
 	}
 	//permet de choisir le mot
-		if(fgets( mot , sizeof(mot) , fichier) == NULL){
-			printf("erreur lors de la recuperation");
-			exit(0);
-	    r=strchr(mot,'\n');
-		//verifie si tout les caracteres ont ete lu
-	    if(r == NULL){
-		    vidercache();
-	    }else {
+	   for(i=0;i<aleatoire;i++){
+		 if(fgets( mot , sizeof(mot) , fichier) == NULL){
+			 printf("erreur lors de la recuperation");
+			 exit(0);
+	         r=strchr(mot,'\n');
+		 //verifie si tout les caracteres ont ete lu
+	         if(r == NULL){
+		        vidercache();
+	         }else {
 			//remplace le caractere de fin de ligne par le cartere nul qui designe la fin de la chaine de caractere
-	      *r='\0';
+	         *r='\0';
+	         }
 	    }
-		i++;
-	}
+    }
 	if (fclose(fichier) == EOF) {
 		exit(0);
 	}
